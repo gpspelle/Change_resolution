@@ -6,7 +6,7 @@ It's using python3 and openCV 3.
 ## Usage
 
 To check parameters you'll need
-$ python3 convert_channel.py
+$ python3 change_resolution.py
 
 And an example of usage:
 
