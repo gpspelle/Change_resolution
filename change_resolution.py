@@ -1,6 +1,7 @@
 import cv2
 import os
 import argparse
+import sys
 
 def change_res(path, width, height):
     fps = int(round((cv2.VideoCapture(path)).get(cv2.CAP_PROP_FPS)))
@@ -29,5 +30,9 @@ argp.add_argument("-path", dest='path', type=str, nargs=1, required=True,
 argp.add_argument("-res", dest='res', type=int, nargs=2, required=True,
                  help='Usage: -res <x_res> <y_res>')
 
-args = argp.parse_args()
+try:
+    args = argp.parse_args()
+except:
+    argp.print_help(sys.stderr)
+    exit(1)
 change_res(args.path[0], args.res[0], args.res[1])
