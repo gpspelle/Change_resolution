@@ -1,4 +1,5 @@
 import cv2
+import shutil
 import os
 import argparse
 import sys
@@ -22,7 +23,7 @@ def change_res(path, width, height):
 
     cap.release()
     out.release()
-    os.rename(path, 'trash.avi')
+    shutil.move(path, 'trash.avi')
     cv2.destroyAllWindows()
 
 argp = argparse.ArgumentParser(description='Change video resolution')
