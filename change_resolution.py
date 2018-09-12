@@ -5,10 +5,10 @@ import sys
 
 def change_res(path, width, height):
     fps = int(round((cv2.VideoCapture(path)).get(cv2.CAP_PROP_FPS)))
-    os.rename(path, path[:-4] + '_old_' + '.mp4')
-    out = cv2.VideoWriter(path, cv2.VideoWriter_fourcc('M','J','P','G'), fps, (width, height))
+    os.rename(path, path[:-4] + '_old_' + '.avi')
+    out = cv2.VideoWriter(path, cv2.VideoWriter_fourcc('X','V','I','D'), fps, (width, height))
 
-    path = path[:-4] + '_old_' + '.mp4'
+    path = path[:-4] + '_old_' + '.avi'
 
     cap = cv2.VideoCapture(path)
 
@@ -22,7 +22,7 @@ def change_res(path, width, height):
 
     cap.release()
     out.release()
-    os.rename(path, 'trash.mp4')
+    os.rename(path, 'trash.avi')
     cv2.destroyAllWindows()
 
 argp = argparse.ArgumentParser(description='Change video resolution')

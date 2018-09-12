@@ -1,7 +1,7 @@
 import os
 
 classes = ['Falls/', 'NotFalls/']
-path = 'FDD/'
+path = 'teste_FDD'
 
 for c in classes:
     for folder in os.listdir(path + c): 
